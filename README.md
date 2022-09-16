@@ -6,8 +6,8 @@
 
 |Лекция|Слайды|Примеры|
 |---|---|---|
-|00. Знакомство|[Intro](./Lections/00_Intro.pptx)|-|
-|01. Процесс и инструменты|[Process and tools](./Lections/01_Process_and_tools.pptx)|-|
+|00. Знакомство|[Intro](/Lections/00_Intro.pptx?raw=true)|-|
+|01. Процесс и инструменты|[Process and tools](/Lections/01_Process_and_tools.pptx?raw=true)|-|
 
 ## Задания к лабораторным
 
