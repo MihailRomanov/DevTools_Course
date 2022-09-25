@@ -78,7 +78,8 @@
 - Создаем PR
 
 ![Image05](images/lab_intro/image05.png)
-    - Убедитесь, что все коммиты включены и PR создается из нужной ветки в master
+
+ - Убедитесь, что все коммиты включены и PR создается из нужной ветки в master
 
 ![Image06](images/lab_intro/image06.png)
 
@@ -96,19 +97,16 @@
 ![Image08](images/lab_intro/image08.png)
 
 - Если статус **Changes requested**
-    - Смотрим, какие замечания 
-
+  - Смотрим, какие замечания 
 ![Image09](images/lab_intro/image09.png)
-    - Исправляем
-    - Пишем ответный комментарий и ставим **Resolve conversation** (смотрите где удобнее - на закладке Conversation, File Changed, ...)
-
+    
+   - Исправляем
+   - Пишем ответный комментарий и ставим **Resolve conversation** (смотрите где удобнее - на закладке Conversation, File Changed, ...)
 ![Image10](images/lab_intro/image10.png)
 
-    - Возвращаемся на закладку **Conversation** и презапрашиваем ревью
-
+  - Возвращаемся на закладку **Conversation** и презапрашиваем ревью
 ![Image11](images/lab_intro/image11.png)
 
 - Если статус **Approved**
-    - Мержим изменения в мастер
-
+  - Мержим изменения в мастер
 ![Image12](images/lab_intro/image12.png)
