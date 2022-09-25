@@ -81,10 +81,11 @@
     - Убедитесь, что все коммиты включены и PR создается из нужной ветки в master
 
 ![Image06](images/lab_intro/image06.png)
-    - Заполните PR
-        - название в виде **DevTools \<lab_number\>/\<task_number\> (\<autor\>, \<group\>)**
-        - краткое описание: что сделано, какие особенности (если есть)
-        - укажите меня в качестве Reviewer
+
+- Заполните PR
+    - название в виде **DevTools \<lab_number\>/\<task_number\> (\<autor\>, \<group\>)**
+    - краткое описание: что сделано, какие особенности (если есть)
+    - укажите меня в качестве Reviewer
 
 ![Image07](images/lab_intro/image07.png)
 
