@@ -35,60 +35,79 @@
 
 ### Подготовка аккаунта
 - Создаём или настраиваем имеющийся аккаунт на GitHub
+
 ![Image00](images/lab_intro/image00.png)
 
 ### Подготовка репозитория
 - Создаем репозиторий 
+
 ![Image01](images/lab_intro/image01.png)
 
 Обратите внимание на выделенные поля: можно пропустить добавление readme файла, но остальные рекомендуется заполнить
 
 - Добавляем меня в качестве участника проекта
+
 ![Image01 01](images/lab_intro/image01_01.png)
+
 ![Image01 02](images/lab_intro/image01_02.png)
+
 ![Image01 03](images/lab_intro/image01_03.png)
 
 Чтобы убедиться, что я принял приглашение посмотрите в список участников. Должен смениться статус **Pending invite**
+
 ![Image01 04](images/lab_intro/image01_04.png)
+
 На полноценное участие
+
 ![Image01 05](images/lab_intro/image01_05.png)
 
 - Заносим в master (main) исходные артефакты задачи. Здесь мы не будем придумывать схему именования - просто скопируем папку PowerCollections как есть:
+
 ![Image02](images/lab_intro/image02.png)
 
 ### Выполнение задачи
 - Создаем отдельную ветку (можно прямо в GitHub, можно локально, а потом залить на сервер - как вам удобно). Именование - произвольное
+
 ![Image03](images/lab_intro/image03.png)
 
 - Выполняем задачу, коммитим, заливаем
+
 ![Image04](images/lab_intro/image04.png)
 
 ### Сдача работы
 - Создаем PR
+
 ![Image05](images/lab_intro/image05.png)
     - Убедитесь, что все коммиты включены и PR создается из нужной ветки в master
+
 ![Image06](images/lab_intro/image06.png)
     - Заполните PR
         - название в виде **DevTools \<lab_number\>/\<task_number\> (\<autor\>, \<group\>)**
         - краткое описание: что сделано, какие особенности (если есть)
         - укажите меня в качестве Reviewer
+
 ![Image07](images/lab_intro/image07.png)
 
 - Ждем ответа: 
     - на почту (если в настройках аккунта указана почта и настроенны оповещения)
     - или периодически проверяем закладку **Pool requests**
+
 ![Image08](images/lab_intro/image08.png)
 
 - Если статус **Changes requested**
     - Смотрим, какие замечания 
+
 ![Image09](images/lab_intro/image09.png)
     - Исправляем
     - Пишем ответный комментарий и ставим **Resolve conversation** (смотрите где удобнее - на закладке Conversation, File Changed, ...)
+
 ![Image10](images/lab_intro/image10.png)
 
     - Возвращаемся на закладку **Conversation** и презапрашиваем ревью
+
 ![Image11](images/lab_intro/image11.png)
 
 - Если статус **Approved**
     - Мержим изменения в мастер
+
 ![Image12](images/lab_intro/image12.png)
