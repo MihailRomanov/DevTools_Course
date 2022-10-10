@@ -11,6 +11,12 @@
 |02. Автоматизация тестирования|[Test automation](/Lections/02_Test_automation.pptx?raw=true)|[Point library and tests](/Lections/02_Test_automation)|
 |03. Модульные тесты|[Unit tests](/Lections/03_Unit_tests.pptx?raw=true)|-|
 
+## Q and A сессии
+
+|Название|Материалы|
+|---|---|
+|Модульные тесты (Task01_01)|[Q&A_01](/Other/QandA/QandA01_01.pptx?raw=true)|
+
 ## Задания к лабораторным
 
 **[Как оформлять лабораторные](docs/lab_intro.md)**
