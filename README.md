@@ -9,7 +9,8 @@
 |00. Знакомство|[Intro](/Lections/00_Intro.pptx?raw=true)|-|
 |01. Процесс и инструменты|[Process and tools](/Lections/01_Process_and_tools.pptx?raw=true)|-|
 |02. Автоматизация тестирования|[Test automation](/Lections/02_Test_automation.pptx?raw=true)|[Point library and tests](/Lections/02_Test_automation)|
-|03. Модульные тесты|[Unit tests](/Lections/03_Unit_tests.pptx?raw=true)|-|
+|03. Модульные тесты|[Unit tests](/Lections/03_Unit_tests.pptx?raw=true)|[Unit tests samples](/Lections/03_Unit_tests)|
+|04. Интеграционные тесты|[Integration tests](/Lections/04_Integration_tests.pptx?raw=true)|[Northwind App Sample](/Lections/04_Integration_and_UI_tests/NorthwindApp)|
 
 ## Q and A сессии
 

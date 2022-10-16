@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Northwind.DB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{0b86c1eb-5e5b-432d-8ca0-1548ab0c9b9e}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Northwind.DB</RootNamespace>
+    <AssemblyName>Northwind.DB</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Schema Objects" />
+    <Folder Include="Schema Objects\Database Level Objects" />
+    <Folder Include="Schema Objects\Database Level Objects\Security" />
+    <Folder Include="Schema Objects\Database Level Objects\Security\Schemas" />
+    <Folder Include="Schema Objects\Schemas" />
+    <Folder Include="Schema Objects\Schemas\Northwind" />
+    <Folder Include="Schema Objects\Schemas\Northwind\Programmability" />
+    <Folder Include="Schema Objects\Schemas\Northwind\Programmability\Stored Procedures" />
+    <Folder Include="Schema Objects\Schemas\Northwind\Tables" />
+    <Folder Include="Schema Objects\Schemas\Northwind\Tables\Constraints" />
+    <Folder Include="Schema Objects\Schemas\Northwind\Tables\Indexes" />
+    <Folder Include="Schema Objects\Schemas\Northwind\Tables\Keys" />
+    <Folder Include="Schema Objects\Schemas\Northwind\Views" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\Post-Deployment" />
+    <Folder Include="Scripts\Pre-Deployment" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schema Objects\Database Level Objects\Security\Schemas\Northwind.schema.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Programmability\Stored Procedures\CustOrderHist.proc.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Programmability\Stored Procedures\CustOrdersDetail.proc.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Programmability\Stored Procedures\CustOrdersOrders.proc.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Programmability\Stored Procedures\Employee Sales by Country.proc.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Programmability\Stored Procedures\Sales by Year.proc.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Programmability\Stored Procedures\SalesByCategory.proc.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Programmability\Stored Procedures\Ten Most Expensive Products.proc.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\CK_Birthdate.chkconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\CK_Discount.chkconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\CK_Products_UnitPrice.chkconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\CK_Quantity.chkconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\CK_ReorderLevel.chkconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\CK_UnitPrice.chkconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\CK_UnitsInStock.chkconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\CK_UnitsOnOrder.chkconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\DF_Order_Details_Discount.defconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\DF_Order_Details_Quantity.defconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\DF_Order_Details_UnitPrice.defconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\DF_Orders_Freight.defconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\DF_Products_Discontinued.defconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\DF_Products_ReorderLevel.defconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\DF_Products_UnitPrice.defconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\DF_Products_UnitsInStock.defconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Constraints\DF_Products_UnitsOnOrder.defconst.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Categories.CategoryName.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Customers.City.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Customers.CompanyName.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Customers.PostalCode.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Customers.Region.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Employees.LastName.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Employees.PostalCode.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Order Details.OrderID.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Order Details.OrdersOrder_Details.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Order Details.ProductID.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Order Details.ProductsOrder_Details.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Orders.CustomerID.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Orders.CustomersOrders.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Orders.EmployeeID.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Orders.EmployeesOrders.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Orders.OrderDate.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Orders.ShippedDate.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Orders.ShippersOrders.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Orders.ShipPostalCode.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Products.CategoriesProducts.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Products.CategoryID.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Products.ProductName.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Products.SupplierID.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Products.SuppliersProducts.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Suppliers.CompanyName.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Indexes\Suppliers.PostalCode.index.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Keys\FK_CustomerCustomerDemo.fkey.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Keys\FK_CustomerCustomerDemo_Customers.fkey.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Keys\FK_Employees_Employees.fkey.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Keys\FK_EmployeeTerritories_Employees.fkey.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Keys\FK_EmployeeTerritories_Territories.fkey.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Keys\FK_Order_Details_Orders.fkey.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Keys\FK_Order_Details_Products.fkey.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Keys\FK_Orders_Customers.fkey.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Keys\FK_Orders_Employees.fkey.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Keys\FK_Orders_Shippers.fkey.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Keys\FK_Products_Categories.fkey.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Keys\FK_Products_Suppliers.fkey.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Keys\FK_Territories_Region.fkey.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Categories.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\CategoriesProducts.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\CustomerCustomerDemo.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\CustomerDemographics.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Customers.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Employees.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\EmployeeTerritories.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Order Details.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Orders.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Products.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Region.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Shippers.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Suppliers.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Tables\Territories.table.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Alphabetical list of products.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Category Sales for 1997.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Current Product List.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Customer and Suppliers by City.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Invoices.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Order Details Extended.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Order Subtotals.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Orders Qry.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Product Sales for 1997.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Products Above Average Price.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Products by Category.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Quarterly Orders.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Sales by Category.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Sales Totals by Amount.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Summary of Sales by Quarter.view.sql" />
+    <Build Include="Schema Objects\Schemas\Northwind\Views\Summary of Sales by Year.view.sql" />
+    <None Include="Scripts\Post-Deployment\Categories.sql" />
+    <None Include="Scripts\Post-Deployment\Customers.sql" />
+    <None Include="Scripts\Post-Deployment\Employees.sql" />
+    <None Include="Scripts\Post-Deployment\EmployeeTerritories.sql" />
+    <None Include="Scripts\Post-Deployment\OrderDetails.sql" />
+    <None Include="Scripts\Post-Deployment\Orders.sql" />
+    <None Include="Scripts\Post-Deployment\Products.sql" />
+    <None Include="Scripts\Post-Deployment\Region.sql" />
+    <None Include="Scripts\Post-Deployment\Shippers.sql" />
+    <None Include="Scripts\Post-Deployment\Suppliers.sql" />
+    <None Include="Scripts\Post-Deployment\Territories.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Post-Deployment\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Scripts\Pre-Deployment\Script.PreDeployment.sql" />
+  </ItemGroup>
+</Project>
