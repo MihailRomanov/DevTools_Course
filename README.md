@@ -11,6 +11,8 @@
 |02. Автоматизация тестирования|[Test automation](/Lections/02_Test_automation.pptx?raw=true)|[Point library and tests](/Lections/02_Test_automation)|
 |03. Модульные тесты|[Unit tests](/Lections/03_Unit_tests.pptx?raw=true)|[Unit tests samples](/Lections/03_Unit_tests)|
 |04. Интеграционные тесты|[Integration tests](/Lections/04_Integration_tests.pptx?raw=true)|[Northwind App Sample](/Lections/04_Integration_and_UI_tests/NorthwindApp)|
+|04_01. Введение в HTTP|[HTTP Intro](/Lections/04_01_HTTP_Intro.pptx?raw=true)|-|
+|04_02. Введение в ASP.Net Core|[ASP.Net Core Intro](/Lections/04_02_ASPNet_Core_Intro.pptx?raw=true)|[ASP.Net Core Samples](/Lections/04_02_ASPNet_Core)|
 
 ## Q and A сессии
 

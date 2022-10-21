@@ -1,0 +1,16 @@
+﻿@model Sample06.Models.HelloViewModel;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Hello, @Model.Name</title>
+</head>
+<body>
+    <h1>Hello, @(string.IsNullOrEmpty(Model.Name)? "World": Model.Name)</h1>
+</body>
+</html>

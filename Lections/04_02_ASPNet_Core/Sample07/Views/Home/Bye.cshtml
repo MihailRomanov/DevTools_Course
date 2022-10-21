@@ -1,0 +1,7 @@
+﻿@model Sample06.Models.HelloViewModel
+@{
+    ViewData["Title"] = "Bye";
+}
+
+<h1>Bye, @(string.IsNullOrEmpty(Model.Name) ? "World" : Model.Name)</h1>
+
