@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using AngleSharp;
 using AngleSharp.Dom;
 using FluentAssertions;
+using Northwind.Web.Tests.TestDataGenerators;
 
 namespace Northwind.Web.Tests
 {
@@ -14,9 +15,11 @@ namespace Northwind.Web.Tests
         [TestMethod]
         public async Task Index_ReturnViewResult_WithAllCategories_InMemoryEF()
         {
-            var categories = TestDataHelpers.GenerateCategories(10).ToList();
-            NorthwindContext context = NorthwindContextHelpers.GetInMemoryContext();
-            FillDb(context, categories);
+            var context = NorthwindContextHelpers.GetInMemoryContext();
+            var categoryGenerator = new CategoryGenerator(context);
+            var categories = categoryGenerator.Generate(10).ToList();
+
+            context.SaveChanges();
 
             var client = GetTestHttpClient(context);
             var response = await client.GetStringAsync("/categories");
@@ -31,9 +34,11 @@ namespace Northwind.Web.Tests
         [TestMethod]
         public async Task Index_ReturnViewResult_WithAllCategories_InMemorySQLite()
         {
-            var categories = TestDataHelpers.GenerateCategories(10).ToList();
-            NorthwindContext context = NorthwindContextHelpers.GetSqliteContext();
-            FillDb(context, categories);
+            var context = NorthwindContextHelpers.GetSqliteContext();
+            var categoryGenerator = new CategoryGenerator(context);
+            var categories = categoryGenerator.Generate(10).ToList();
+
+            context.SaveChanges();
 
             HttpClient client = GetTestHttpClient(context);
             var response = await client.GetStringAsync("/categories");
@@ -63,15 +68,6 @@ namespace Northwind.Web.Tests
                     .Excluding(c => c.Products)
                     .Excluding(c => c.Picture)
                     .Excluding(c=> c.Description));
-        }
-
-        private static void FillDb(NorthwindContext context, IEnumerable<Category> categories)
-        {
-            categories
-                .ToList()
-                .ForEach(c => context.Categories.Add(c));
-
-            context.SaveChanges();
         }
 
         private static HttpClient GetTestHttpClient(NorthwindContext? context = null)
