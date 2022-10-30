@@ -1,0 +1,48 @@
+﻿@model IEnumerable<CategoryViewModel>
+
+@{
+    ViewData["Title"] = "Категории";
+}
+
+<h1>Категории</h1>
+
+<p>
+    <a asp-action="Create">Добавить новую</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Picture)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr data-tid="category-row-@item.CategoryId">
+                <td data-tid="category-name">
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td data-tid="category-description">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td data-tid="category-picture">
+                    <img src="@Url.Action("Image", new { Id = item.CategoryId })" width="100" />
+                </td>
+                <td data-tid="category-row-actions">
+                    <a asp-action="Edit" asp-route-id="@item.CategoryId">Редактировать</a><br />
+                    <a asp-action="Details" asp-route-id="@item.CategoryId">Детали</a> <br />
+                    <a asp-action="Delete" asp-route-id="@item.CategoryId">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
