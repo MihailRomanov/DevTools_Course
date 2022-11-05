@@ -131,7 +131,7 @@ namespace Northwind.Web.Tests
                 {
                     builder.ConfigureServices(services =>
                     {
-                        services.AddSingleton<NorthwindContext>(services => context());
+                        services.AddScoped<NorthwindContext>(services => context());
                     });
                 });
             }
