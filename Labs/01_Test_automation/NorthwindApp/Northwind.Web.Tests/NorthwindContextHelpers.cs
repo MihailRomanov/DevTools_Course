@@ -6,7 +6,7 @@ namespace Northwind.Web.Tests
 {
     public static class NorthwindContextHelpers
     {
-        public static NorthwindContext GetInMemoryContext()
+        public static NorthwindContext GetInMemoryContext(bool clear = false)
         {
             var contextOptions = new DbContextOptionsBuilder<NorthwindContext>()
                 .UseInMemoryDatabase("TestDb")
@@ -14,8 +14,11 @@ namespace Northwind.Web.Tests
                 .Options;
             var context = new NorthwindContext(contextOptions);
 
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
+            if (clear)
+            {
+                context.Database.EnsureDeleted();
+                context.Database.EnsureCreated();
+            }
 
             return context;
         }

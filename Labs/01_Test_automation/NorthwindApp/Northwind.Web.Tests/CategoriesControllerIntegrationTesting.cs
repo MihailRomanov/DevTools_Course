@@ -6,6 +6,7 @@ using AngleSharp;
 using AngleSharp.Dom;
 using FluentAssertions;
 using Northwind.Web.Tests.TestDataGenerators;
+using Microsoft.EntityFrameworkCore;
 
 namespace Northwind.Web.Tests
 {
@@ -18,7 +19,7 @@ namespace Northwind.Web.Tests
         public async Task Index_ReturnViewResult_WithAllCategories()
         {
             // Создаем пустой контекст EF в памяти и заносим 10 категорий
-            var context = NorthwindContextHelpers.GetInMemoryContext();
+            var context = NorthwindContextHelpers.GetInMemoryContext(true);
             var categoryGenerator = new CategoryGenerator(context);
             var categories = categoryGenerator.Generate(10).ToList();
             context.SaveChanges();
@@ -26,7 +27,8 @@ namespace Northwind.Web.Tests
             // Запускаем наше приложение на основе созданного и заполненного 
             // контекста и получаем HTTP клиент, который будет к этому приложению
             // обращаться
-            var client = GetTestHttpClient(context);
+            var client = GetTestHttpClient(
+                () => NorthwindContextHelpers.GetInMemoryContext());
 
             // Делаем GET запрос к списку категорий
             var response = await client.GetStringAsync("/categories");
@@ -45,13 +47,13 @@ namespace Northwind.Web.Tests
         public async Task Create_AddNewCategory_WithoutPicture_AsUrlEncodedForm_And_RedirectToList()
         {
             // Создаем пустой контекст и 1 категорию, но в базу её не сохраняем
-            var context = NorthwindContextHelpers.GetInMemoryContext();
+            var context = NorthwindContextHelpers.GetInMemoryContext(true);
             var category = new CategoryGenerator().Generate();
 
             // Запускаем приложение и получаем клиент, но с опцией, что он
             // не будет автоматически выполнять Redirect (чтобы мы могли проверить реальный
             // ответ на наше запрос)
-            var client = GetTestHttpClient(context, 
+            var client = GetTestHttpClient(() => NorthwindContextHelpers.GetInMemoryContext(), 
                 new WebApplicationFactoryClientOptions { AllowAutoRedirect = false });
 
             // Обращаемся к форме создания новой категории, только чтобы получить
@@ -61,7 +63,7 @@ namespace Northwind.Web.Tests
 
             // Формируем запрс, как если бы отправлялась ранее полученная форма
             var formContent = new FormUrlEncodedContent(
-                new Dictionary<string, string> { 
+                new Dictionary<string, string> {
                     [nameof(Category.CategoryName)] = category.CategoryName,
                     [nameof(Category.Description)] = category.Description,
                     [AspNetVerificationTokenName] = verificationToken
@@ -69,6 +71,7 @@ namespace Northwind.Web.Tests
 
             // Получаем ответ и достаем из базы только что созданную категорию
             var response = await client.PostAsync("/categories/create", formContent);
+            context = NorthwindContextHelpers.GetInMemoryContext();
             var newCategory = context.Categories.First();
 
             // Проверяем, что в качестве ответа нам пришел редирект на список категорий
@@ -86,10 +89,10 @@ namespace Northwind.Web.Tests
         public async Task Create_AddNewCategory_WithPicture_AsMultipartForm_And_RedirectToList()
         {
             // Всё делаем аналогично тесту выше, кроме формирования запроса
-            var context = NorthwindContextHelpers.GetInMemoryContext();
+            var context = NorthwindContextHelpers.GetInMemoryContext(true);
             var category = new CategoryGenerator().Generate();
 
-            var client = GetTestHttpClient(context,
+            var client = GetTestHttpClient(() => NorthwindContextHelpers.GetInMemoryContext(),
                 new WebApplicationFactoryClientOptions { AllowAutoRedirect = false });
             var createForm = await client.GetStringAsync("/categories/create");
             var verificationToken = GetRequestVerificationToken(createForm);
@@ -104,6 +107,7 @@ namespace Northwind.Web.Tests
 
             // Получаем и счверяем результат как в предыдущем тесте, только сверяем еще и картинку 
             var response = await client.PostAsync("/categories/create", multipartContent);
+            context = NorthwindContextHelpers.GetInMemoryContext();
             var newCategory = context.Categories.First();
 
             response.StatusCode.Should().Be(System.Net.HttpStatusCode.Redirect);
@@ -116,7 +120,7 @@ namespace Northwind.Web.Tests
         }
 
         private static HttpClient GetTestHttpClient(
-            NorthwindContext? context = null,
+            Func<NorthwindContext>? context = null,
             WebApplicationFactoryClientOptions? clientOptions = null
             )
         {
@@ -127,7 +131,7 @@ namespace Northwind.Web.Tests
                 {
                     builder.ConfigureServices(services =>
                     {
-                        services.AddSingleton<NorthwindContext>(services => context);
+                        services.AddSingleton<NorthwindContext>(services => context());
                     });
                 });
             }
