@@ -13,6 +13,7 @@
 |04. Интеграционные тесты|[Integration tests](/Lections/04_Integration_tests.pptx?raw=true)|[Northwind App Sample](/Lections/04_Integration_and_UI_tests/NorthwindApp)|
 |04_01. Введение в HTTP|[HTTP Intro](/Lections/04_01_HTTP_Intro.pptx?raw=true)|-|
 |04_02. Введение в ASP.Net Core|[ASP.Net Core Intro](/Lections/04_02_ASPNet_Core_Intro.pptx?raw=true)|[ASP.Net Core Samples](/Lections/04_02_ASPNet_Core)|
+|05. UI тесты|[UI tests](/Lections/05_UI_tests.pptx?raw=true)|[Northwind App Sample](/Lections/04_Integration_and_UI_tests/NorthwindApp) <br/>[Calculator Tests Sample](/Lections/04_Integration_and_UI_tests/CalculatorTests)|
 
 ## Q and A сессии
 
@@ -31,7 +32,7 @@
 |Задача|Срок сдачи на 100%|
 |---|--|
 |[01/01. Модульные тесты](Labs/01_Test_automation/task_01_unit_tests.md)|14.10.2022|
-|[01/02. Интеграционные тесты](Labs/01_Test_automation/task_02_integration_tests.md)|11.11.2022|
+|[01/02. Интеграционные тесты](Labs/01_Test_automation/task_02_integration_tests.md)|18.11.2022|
 
 *Примечание. В таблице указывается срок, до которого задача оценивается исходя из 100%. Каждая неделя задержки сверх этого срока **-10%***
 
