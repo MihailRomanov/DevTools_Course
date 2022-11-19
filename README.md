@@ -14,6 +14,7 @@
 |04_01. Введение в HTTP|[HTTP Intro](/Lections/04_01_HTTP_Intro.pptx?raw=true)|-|
 |04_02. Введение в ASP.Net Core|[ASP.Net Core Intro](/Lections/04_02_ASPNet_Core_Intro.pptx?raw=true)|[ASP.Net Core Samples](/Lections/04_02_ASPNet_Core)|
 |05. UI тесты|[UI tests](/Lections/05_UI_tests.pptx?raw=true)|[Northwind App Sample](/Lections/04_Integration_and_UI_tests/NorthwindApp) <br/>[Calculator Tests Sample](/Lections/04_Integration_and_UI_tests/CalculatorTests)|
+|06. ALM |[ALM](/Lections/06_ALM.pptx?raw=true)|-|
 
 ## Q and A сессии
 
