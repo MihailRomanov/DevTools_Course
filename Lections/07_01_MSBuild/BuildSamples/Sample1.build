@@ -1,0 +1,19 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Target Name="Clear">
+    <RemoveDir Directories="Releases\Release_0.0.1.0" />
+  </Target>
+  
+  <Target Name="Build">
+    <Message Text="Build Projects" Importance="high" />
+    
+    <MSBuild Projects="Source\PowerCollections\PowerCollections.csproj" Properties="Configuration=Release" />
+    <MSBuild Projects="docbuild.shfbproj" Properties="Configuration=Release" />
+    
+    <Message Text="Copy Results" Importance="high" />
+    
+    <Copy SourceFiles="Source\PowerCollections\bin\Release\PowerCollections.dll" DestinationFolder="Releases\Release_0.0.1.0" />
+    <Copy SourceFiles="Help\Documentation.chm" DestinationFolder="Releases\Release_0.0.1.0" />
+  </Target>
+
+</Project>

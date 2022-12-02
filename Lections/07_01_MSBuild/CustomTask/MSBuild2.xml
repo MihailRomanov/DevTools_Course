@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project
+  xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+  DefaultTargets="One">
+
+  <UsingTask AssemblyFile="MyTask\bin\Debug\MyTask.dll" TaskName="SimpleTask"/>
+  <UsingTask AssemblyFile="MyTask\bin\Debug\MyTask.dll" TaskName="RegExFilter"/>
+
+  <ItemGroup>
+    <InputStrings Include="AAAA;5564564;^@#$;BBB"/>
+    <InputStrings Include="567;234;CCCCC"/>
+  </ItemGroup>
+
+                   
+  <Target Name="One">
+    <SimpleTask Name="Mihail Romanov"/>
+
+    <RegExFilter InputStrings="@(InputStrings)" Filter="[ABC]+">
+      <Output TaskParameter="ResultStrings" ItemName="ResultStrings" />
+    </RegExFilter>
+
+    <Message Text="@(ResultStrings)" Importance="high"/>
+
+  </Target>
+</Project>

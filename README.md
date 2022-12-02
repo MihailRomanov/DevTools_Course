@@ -15,6 +15,9 @@
 |04_02. Введение в ASP.Net Core|[ASP.Net Core Intro](/Lections/04_02_ASPNet_Core_Intro.pptx?raw=true)|[ASP.Net Core Samples](/Lections/04_02_ASPNet_Core)|
 |05. UI тесты|[UI tests](/Lections/05_UI_tests.pptx?raw=true)|[Northwind App Sample](/Lections/04_Integration_and_UI_tests/NorthwindApp) <br/>[Calculator Tests Sample](/Lections/04_Integration_and_UI_tests/CalculatorTests)|
 |06. ALM |[ALM](/Lections/06_ALM.pptx?raw=true)|-|
+|07_00. Build |[Build](/Lections/07_00_Build.pptx?raw=true)|[Build Samples](/Lections/07_00_Build)|
+|07_01. MSBuild |[MSBuild](/Lections/07_01_MSBuild.pptx?raw=true)|[MSBuild Samples](/Lections/07_01_MSBuild)|
+
 
 ## Q and A сессии
 
@@ -34,7 +37,7 @@
 |---|--|
 |[01/01. Модульные тесты](Labs/01_Test_automation/task_01_unit_tests.md)|14.10.2022|
 |[01/02. Интеграционные тесты](Labs/01_Test_automation/task_02_integration_tests.md)|18.11.2022|
-|[01/03. Тесты через UI](Labs/01_Test_automation/task_03_ui_tests.md)|02.12.2022|
+|[01/03. Тесты через UI](Labs/01_Test_automation/task_03_ui_tests.md)|08.12.2022|
 
 *Примечание. В таблице указывается срок, до которого задача оценивается исходя из 100%. Каждая неделя задержки сверх этого срока **-10%***
 

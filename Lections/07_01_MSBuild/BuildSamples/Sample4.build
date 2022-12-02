@@ -1,0 +1,41 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<UsingTask AssemblyFile="Tasks\MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.Compression.DNZip" />
+
+	<PropertyGroup>
+		<CurrentDate>$([System.DateTime]::Now.ToString("yyyyMMdd"))</CurrentDate>
+		<ReleaseNumber Condition=" '$(ReleaseNumber)' == '' ">0.0.1.0</ReleaseNumber>
+		<ReleaseFolder>Releases\Release_$(CurrentDate)_$(ReleaseNumber)</ReleaseFolder>
+		<Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Projects Include="Source\PowerCollections\PowerCollections.csproj;Source\PowerCollections.Tests\PowerCollections.Tests.csproj;docbuild.shfbproj" />
+	</ItemGroup>
+
+	<Target Name="Clear">
+		<RemoveDir Directories="$(ReleaseFolder)" />
+	</Target>
+
+	<Target Name="Build">
+		<MSBuild Projects="@(Projects)" Properties="Configuration=$(Configuration)">
+			<Output TaskParameter="TargetOutputs" ItemName="OutputFiles"/>
+		</MSBuild>
+
+		<ItemGroup>
+			<OutputFiles Include="Help\Documentation.chm" />
+		</ItemGroup>
+
+		<Copy SourceFiles="@(OutputFiles)" DestinationFolder="$(ReleaseFolder)" />
+
+		<MSBuild.ExtensionPack.Compression.DNZip
+		  CompressionLevel="BestCompression"
+		  TaskAction="Create"
+		  CompressPath="$(ReleaseFolder)"
+		  ZipFileName="$(ReleaseFolder).zip" />
+
+		<RemoveDir Directories="$(ReleaseFolder)" />
+
+	</Target>
+
+</Project>
