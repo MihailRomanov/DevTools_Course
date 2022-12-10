@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Deterministic>false</Deterministic>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageId>Wintellect.PowerCollections</PackageId>
+		<Title>Wintellect.PowerCollections</Title>
+		<Company>Wintellect</Company>
+		<Product>Power Collections</Product>
+		<Description>The Power Collections group of collection classes</Description>
+		<Copyright>Copyright (c) 2004-2007, Wintellect</Copyright>
+	</PropertyGroup>
+
+</Project>
