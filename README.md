@@ -19,7 +19,7 @@
 |07_01. MSBuild |[MSBuild](/Lections/07_01_MSBuild.pptx?raw=true)|[MSBuild Samples](/Lections/07_01_MSBuild)|
 |08. Dependency management|[Dependency management](/Lections/08_00_Dependency_management.pptx?raw=true)|-|
 |08_01 NuGet|[NuGet](/Lections/08_01_NuGet.pptx?raw=true)|[NuGet Sample](/Lections/08_01_NuGet)|
-|09. Documentation|[Documentation](/Lections/09_Documentation.pptx.pptx?raw=true)|[Documentation](/Lections/09_Documentation)|
+|09. Documentation|[Documentation](/Lections/09_Documentation.pptx?raw=true)|[Documentation](/Lections/09_Documentation)|
 
 
 ## Q and A сессии
