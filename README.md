@@ -21,6 +21,8 @@
 |08_01 NuGet|[NuGet](/Lections/08_01_NuGet.pptx?raw=true)|[NuGet Sample](/Lections/08_01_NuGet)|
 |09. Documentation|[Documentation](/Lections/09_Documentation.pptx?raw=true)|[Documentation](/Lections/09_Documentation)|
 |10. VCS|[VCS](/Lections/10_VCS.pptx?raw=true)|
+|11_00. Deploy|[Deploy](/Lections/11_00_Deploy.pptx?raw=true)|
+|11_01. DB Deploy|[VCS](/Lections/10_VCS.pptx?raw=true)|
 
 ## Q and A сессии
 
