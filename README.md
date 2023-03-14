@@ -23,6 +23,7 @@
 |10. VCS|[VCS](/Lections/10_VCS.pptx?raw=true)|
 |11_00. Deploy|[Deploy](/Lections/11_00_Deploy.pptx?raw=true)|
 |11_01. DB Deploy|[DB Deploy](/Lections/11_01_DB_Deploy.pptx?raw=true)|
+|11_02. Win Client Deploy|[Client Deploy](/Lections/11_02_Desktop_Deploy.pptx?raw=true)|
 |12_00. CI/CD Intro|[CI/CD Intro](/Lections/12_00_CI_CD_Intro.pptx?raw=true)|
 |12_01. Github Actions|[Github Actions](/Lections/12_01_Github_Actions.pptx?raw=true)|
 
